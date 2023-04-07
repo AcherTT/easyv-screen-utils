@@ -2,6 +2,10 @@
   "cSpell.words": [
     "cflags",
     "easyv",
+    "libpq",
+    "libpqxx",
+    "libuv",
+    "nestjs",
     "rapidjson"
   ],
   "files.associations": {

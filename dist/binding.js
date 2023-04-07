@@ -4,8 +4,8 @@ class ScreenImportUtils {
     constructor(dbUrl) {
         this._addonInstance = new addon.ScreenImportUtils(dbUrl);
     }
-    importScreen(time, packetPath, callback) {
-        return this._addonInstance.importScreen(time, packetPath, callback);
+    importScreen(packetPath, callback, time) {
+        return this._addonInstance.importScreen(packetPath, callback, time);
     }
 }
 module.exports = ScreenImportUtils;

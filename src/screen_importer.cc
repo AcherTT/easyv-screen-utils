@@ -8,6 +8,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <iostream>
 
 ScreenImporterAsyncWorker::ScreenImporterAsyncWorker(
     Function &callback, std::string packetPath, int runTime)
@@ -19,14 +20,17 @@ void ScreenImporterAsyncWorker::Execute()
   this->checkPacketPath();
   this->checkPacketExist();
   this->checkPacketValid();
-  this->importScreen();
+  this->result = this->importScreen();
 };
 
 void ScreenImporterAsyncWorker::OnOK()
 {
-  std::string msg = "ScreenImporterAsyncWorker returning after 'working' " +
-                    std::to_string(runTime) + " seconds.";
-  Callback().Call({Env().Null(), String::New(Env(), msg)});
+  Callback().Call({Env().Null(), Number::New(Env(), this->result)});
+};
+
+void ScreenImporterAsyncWorker::OnError(const Error &e)
+{
+  Callback().Call({String::New(Env(), e.what()), Env().Null()});
 };
 
 /**
@@ -37,20 +41,20 @@ rapidjson::Document ScreenImporterAsyncWorker::getFileContent(std::string path)
   using namespace rapidjson;
   int fd = open(path.c_str(), O_RDONLY);
   if (fd == -1)
-    throw std::runtime_error(std::string("failed to open file: ") + std::strerror(errno));
+    SetError(std::string("failed to open file: ") + std::strerror(errno));
 
   struct stat sb;
   if (fstat(fd, &sb) == -1)
   {
     close(fd);
-    throw std::runtime_error(std::string("failed to stat file: ") + std::strerror(errno));
+    SetError(std::string("failed to stat file: ") + std::strerror(errno));
   }
 
   char *jsonStr = static_cast<char *>(mmap(NULL, sb.st_size, PROT_READ, MAP_PRIVATE, fd, 0));
   if (jsonStr == MAP_FAILED)
   {
     close(fd);
-    throw std::runtime_error(std::string("failed to mmap file: ") + std::strerror(errno));
+    SetError(std::string("failed to mmap file: ") + std::strerror(errno));
   }
 
   Document document;
@@ -76,6 +80,15 @@ bool ScreenImporterAsyncWorker::checkPacketValid()
   return true;
 }
 
-void ScreenImporterAsyncWorker::importScreen()
+unsigned long long ScreenImporterAsyncWorker::importScreen()
 {
+  rapidjson::Document result = this->getFileContent(this->packetPath);
+  assert(result.IsArray());
+  for (rapidjson::SizeType i = 0; i < result.Size(); i++)
+  {
+    assert(result[i].IsObject());
+    assert(result[i]["name"].IsString());
+    assert(result[i]["id"].GetType() == rapidjson::kNumberType);
+  }
+  return result.Size();
 }

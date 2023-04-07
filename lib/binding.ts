@@ -1,7 +1,7 @@
 const addon = require('../build/Release/screen_importer-native')
 
 interface ScreenImporterWrap {
-  importScreen(time: string, packetPath: string, callback: () => void): string
+  importScreen(packetPath: string, callback: (err: Error, result: number) => void, time: number): string
 }
 
 class ScreenImportUtils {
@@ -11,8 +11,8 @@ class ScreenImportUtils {
     this._addonInstance = new addon.ScreenImportUtils(dbUrl)
   }
 
-  importScreen(time: string, packetPath: string, callback: () => void) {
-    return this._addonInstance.importScreen(time, packetPath, callback)
+  importScreen(packetPath: string, callback: (err: Error, result: number) => void, time: number) {
+    return this._addonInstance.importScreen(packetPath, callback, time)
   }
 }
 
