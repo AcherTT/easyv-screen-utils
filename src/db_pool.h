@@ -1,15 +1,27 @@
 #pragma once
 
-#include <string>
+#include <queue>
+#include <mutex>
+#include <condition_variable>
+#include <libpq-fe.h>
 
-struct db_pool_config
+class PgsqlConnectionPool
 {
-    std::string host;
-    std::string user;
-    std::string password;
-    std::string database;
-    int port;
-    int max_connections;
-    int min_connections;
-    int max_idle_time;
+public:
+    PgsqlConnectionPool(Napi::Env *env, const char *dbUrl, int pool_size);
+    ~PgsqlConnectionPool();
+    PGconn *getConnection();
+    void releaseConnection(PGconn *conn);
+
+private:
+    std::queue<PGconn *> connections_;
+    std::mutex mutex_;
+    std::condition_variable cv_;
+    const char *dbUrl_;
+    int pool_size_;
+    int current_size_;
+    Napi::Env *env_;
+
+private:
+    void createConnection();
 };

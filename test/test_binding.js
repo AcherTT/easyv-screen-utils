@@ -8,7 +8,9 @@ let minMemoryUsage = Number.MAX_SAFE_INTEGER;
 let maxMemoryUsage = Number.MIN_SAFE_INTEGER;
 
 function testBasic() {
-    const instance = new ScreenImportUtils("mysql://root:root@localhost:3306/easyv_saas");
+    const instance = new ScreenImportUtils(
+        "host=101.43.100.93 port=5432 dbname=postgres user=postgres password=admin123D"
+    );
     assert(instance.importScreen, "The expected method is not defined");
 
     const now = new Date().getTime()

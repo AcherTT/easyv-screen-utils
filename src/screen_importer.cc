@@ -28,11 +28,6 @@ void ScreenImporterAsyncWorker::OnOK()
   Callback().Call({Env().Null(), Number::New(Env(), this->result)});
 };
 
-void ScreenImporterAsyncWorker::OnError(const Error &e)
-{
-  Callback().Call({String::New(Env(), e.what()), Env().Null()});
-};
-
 /**
  * 使用mmap读取文件内容，因为文件可能比较大，mmap性能和内存占用更好
  */

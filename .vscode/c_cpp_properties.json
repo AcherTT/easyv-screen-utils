@@ -1,9 +1,11 @@
 {
     "configurations": [
         {
-            "name": "Mac",
+            "name": "不重要",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/usr/local/include/**",
+                "/usr/include/**"
             ],
             "defines": [],
             "macFrameworkPath": [],

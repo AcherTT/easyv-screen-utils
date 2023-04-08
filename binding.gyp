@@ -1,13 +1,19 @@
 {
   'targets': [
     {
-      'target_name': 'screen_importer-native',
+      'target_name': 'screen_utils_native',
       'sources': [ 
         'src/screen_utils.cc',
         'src/screen_importer.cc',
+        'src/db_pool.cc',
+        'src/main.cc'
       ],
       'include_dirs': [
         "<!@(node -p \"require('node-addon-api').include\")",
+        "/usr/include/postgresql",
+      ],
+      'libraries': [
+        "-L/usr/lib/x86_64-linux-gnu -lpq"
       ],
       'dependencies': [
         "<!(node -p \"require('node-addon-api').gyp\")",

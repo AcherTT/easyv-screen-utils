@@ -33,7 +33,6 @@ public:
   ScreenImporterAsyncWorker(Function &callback, std::string packetPath, int runTime = 100);
   virtual ~ScreenImporterAsyncWorker(){};
 
-  void Execute();               // 执行异步任务
-  void OnOK();                  // 执行成功回调
-  void OnError(const Error &e); // 执行失败回调
+  void Execute(); // 执行异步任务
+  void OnOK();    // 执行成功回调
 };

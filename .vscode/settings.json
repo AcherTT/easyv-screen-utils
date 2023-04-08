@@ -1,6 +1,7 @@
 {
   "cSpell.words": [
     "cflags",
+    "conninfo",
     "easyv",
     "libpq",
     "libpqxx",
@@ -91,6 +92,9 @@
     "cinttypes": "cpp",
     "codecvt": "cpp",
     "fstream": "cpp",
-    "iomanip": "cpp"
+    "iomanip": "cpp",
+    "list": "cpp",
+    "set": "cpp",
+    "shared_mutex": "cpp"
   }
 }

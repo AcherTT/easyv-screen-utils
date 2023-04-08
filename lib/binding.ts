@@ -1,4 +1,4 @@
-const addon = require('../build/Release/screen_importer-native')
+const addon = require('../build/Release/screen_utils_native')
 
 interface ScreenImporterWrap {
   importScreen(packetPath: string, callback: (err: Error, result: number) => void, time: number): string
@@ -14,6 +14,7 @@ class ScreenImportUtils {
   importScreen(packetPath: string, callback: (err: Error, result: number) => void, time: number) {
     return this._addonInstance.importScreen(packetPath, callback, time)
   }
+
 }
 
 export = ScreenImportUtils

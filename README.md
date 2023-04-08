@@ -16,15 +16,21 @@ JSON.parse 解析 json 时，内存占用较大，且 js 层业务代码并不�
 
 
 ## 依赖
-1. rapidjson: 解析json
-2. libpq: 数据库连接工具
+1. rapidjson: 解析json，不需要安装，集成在项目里。
+2. libpq: 数据库连接工具，安装方式如下
+   ```sh
+    sudo apt-get install libpq-dev
+    sudo yum install postgresql-devel
+    brew install libpq
+   ```
 3. node-gyp: 编译工具
+   安装方式参考：[github连接](https://github.com/nodejs/node-gyp)
 
 ## Q&A
 1. 为什么使用 rapidjson？
     在综合对比 c/c++ 市面上所有 json 解析工具之后，最终决定使用 rapidjson，优点是性能高内存小，确定是 api 设计不合理，难用。
 2. 为什么 c++ 层是解析文件，而不是 js 层将字符串传递到c++层？
-    这个是临时方案，首先如果数据量很大，js 层不需要关心具体内容，直接存在磁盘即可，否则内存会被无意义的消耗。其次经过测试，c++ 层读取 160 mb 的文件并解析成document时，速度也可接受。
+    这个是临时方案，首先如果数据量很大，js 层不需要关心具体内容，直接存在磁盘即可，否则内存会被无意义的消耗。其次经过测试，c++ 层读取 160 mb 的文件并解析成 document 时，速度也可接受。
 
 ## TODO
 

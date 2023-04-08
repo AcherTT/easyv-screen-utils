@@ -1,5 +1,6 @@
 #include "screen_utils.h"
 #include "screen_importer.h"
+#include "db_pool.h"
 
 using namespace Napi;
 
@@ -10,19 +11,23 @@ ScreenImportUtils::ScreenImportUtils(const Napi::CallbackInfo &info)
 
   if (info.Length() < 1)
   {
-    Napi::TypeError::New(env, "不能没有参数哇")
-        .ThrowAsJavaScriptException();
+    Napi::TypeError::New(env, "不能没有参数哇").ThrowAsJavaScriptException();
     return;
   }
 
   if (!info[0].IsString())
   {
-    Napi::TypeError::New(env, "参数不对哇")
-        .ThrowAsJavaScriptException();
+    Napi::TypeError::New(env, "参数不对哇").ThrowAsJavaScriptException();
     return;
   }
 
   this->dbUrl = info[0].As<Napi::String>().Utf8Value();
+  this->pool = new PgsqlConnectionPool(&env, this->dbUrl.c_str(), 4); // 创建连接池
+}
+
+ScreenImportUtils::~ScreenImportUtils()
+{
+  delete this->pool;
 }
 
 Napi::Value ScreenImportUtils::ImportScreen(const Napi::CallbackInfo &info)
@@ -53,18 +58,9 @@ Napi::Value ScreenImportUtils::ImportScreen(const Napi::CallbackInfo &info)
 Napi::Function ScreenImportUtils::GetClass(Napi::Env env)
 {
   return DefineClass(
-      env, 
+      env,
       "ScreenImportUtils",
       {
           ScreenImportUtils::InstanceMethod("importScreen", &ScreenImportUtils::ImportScreen),
       });
 }
-
-Napi::Object Init(Napi::Env env, Napi::Object exports)
-{
-  Napi::String name = Napi::String::New(env, "ScreenImportUtils");
-  exports.Set(name, ScreenImportUtils::GetClass(env));
-  return exports;
-}
-
-NODE_API_MODULE(addon, Init)
