@@ -13,12 +13,13 @@
         "/usr/include/postgresql",
       ],
       'libraries': [
-        "-L/usr/lib/x86_64-linux-gnu -lpq"
+        '-lpq',
+        '-lzip',
       ],
       'dependencies': [
         "<!(node -p \"require('node-addon-api').gyp\")",
       ],
-      'cflags!': [ '-fno-exceptions' ],
+      'cflags!': [ '-fno-exceptions', '-w', '-Wno-unused-result'],
       'cflags_cc!': [ '-fno-exceptions' ],
       'xcode_settings': {
         'GCC_ENABLE_CPP_EXCEPTIONS': 'YES',

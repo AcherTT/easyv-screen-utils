@@ -16,7 +16,8 @@ function testBasic() {
     const now = new Date().getTime()
 
     instance.importScreen(
-        '/media/tantan/办公/work/code/easyv-screen-utils/screen_test/big_json/160.json',
+        // '/media/tantan/办公/work/code/easyv-screen-utils/screen_test/big_json/160.json',
+        '/media/tantan/办公/work/code/easyv-screen-utils/screen_test/big_screen.zip',
         (err, result) => {
             clearInterval(id);
             console.log("using time: ", new Date().getTime() - now)

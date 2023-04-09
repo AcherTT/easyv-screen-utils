@@ -95,6 +95,7 @@
     "iomanip": "cpp",
     "list": "cpp",
     "set": "cpp",
-    "shared_mutex": "cpp"
+    "shared_mutex": "cpp",
+    "filesystem": "cpp"
   }
 }
