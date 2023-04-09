@@ -1,5 +1,7 @@
 # EasyV 大屏导入工具
 
+**目前还没在windows系统中编译过，一个是因为依赖没有集成到项目内部，安装依赖比较麻烦，另一个原因是我暂时手里没有Windows电脑**
+
 ## 需求背景
 JSON.parse 解析 json 时，内存占用较大，且 js 层业务代码并不关心解析出来的具体值，只需要简单替换引用关系并存入数据库即可。
 
@@ -42,6 +44,7 @@ JSON.parse 解析 json 时，内存占用较大，且 js 层业务代码并不�
    安装方式参考：[github连接](https://github.com/nodejs/node-gyp)
 
 ## 编译
+### 类Unix系统
 需要注意不同系统在安装完libpq后，可能会有 postgresql 头文件位置不同的情况，如有不同请修改 binding.gyp 的 include_dirs
 ```sh
 npm run build
@@ -61,6 +64,7 @@ npm run build
 - [x] 将所有文件内容解析成 json document。
 - [ ] 实现导入大屏完整逻辑，剩下遍历数据，然后存入数据库。
 - [ ] 封装成 nestjs 模块。
+- [ ] 数据一次性加载改为按需加载，这样可以更加节省内存，且性能不变。
 - [ ] 性能测试 tinybench。
 - [ ] 实现数据库连接池更完整的功能，否则不稳定。
 - [ ] 考虑使用 orm 框架增加项目可维护性 SOCI。
@@ -70,7 +74,7 @@ npm run build
 
 
 ## 临时小记 - 非常简单的测试了一下时间内存，后续考虑更详细的测试
-1. 测试机器：ubuntu 16（deepin 20），6核12线程，3.6GHz
+1. 测试机器：ubuntu 16（deepin 20），6核12线程，3.6GHz。
 2. 大屏文件：panel.json 50MB，component.json 50MB，其他较小忽略不计。
 3. 时间花费：从开始到将所有文件数据解析成json document的时间在300ms以内。后续如果不在乎api易用性的话，可以使用rapidjson的sax模式，速度将会更快。
 4. 内存消耗：运行的全程，最小内存51MB，最大到160MB，差距大约在110MB，基本就是包的大小。从rapidjson的文档来看，除字符串类型，其他类型都占用16字节，和json在磁盘中占用空间接近。
