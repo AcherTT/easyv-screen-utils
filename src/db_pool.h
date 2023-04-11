@@ -4,6 +4,7 @@
 #include <mutex>
 #include <condition_variable>
 #include <libpq-fe.h>
+#include <napi.h>
 
 class PgsqlConnectionPool
 {

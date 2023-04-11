@@ -1,6 +1,3 @@
-#pragma once
-
-#include <napi.h>
 #include "db_pool.h"
 
 PgsqlConnectionPool::PgsqlConnectionPool(

@@ -21,13 +21,13 @@ ScreenImportUtils::ScreenImportUtils(const Napi::CallbackInfo &info)
     return;
   }
 
-  this->dbUrl = info[0].As<Napi::String>().Utf8Value();
-  this->pool = new PgsqlConnectionPool(&env, this->dbUrl.c_str(), 4); // 创建连接池
+  this->dbUrl_ = info[0].As<Napi::String>().Utf8Value();
+  this->pool_ = new PgsqlConnectionPool(&env, this->dbUrl_.c_str(), 4); // 创建连接池
 }
 
 ScreenImportUtils::~ScreenImportUtils()
 {
-  delete this->pool;
+  delete this->pool_;
 }
 
 Napi::Value ScreenImportUtils::ImportScreen(const Napi::CallbackInfo &info)

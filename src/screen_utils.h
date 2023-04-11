@@ -17,6 +17,6 @@ public:
   static Napi::Function GetClass(Napi::Env);
 
 private:
-  std::string dbUrl;
-  PgsqlConnectionPool *pool;
+  std::string dbUrl_;
+  PgsqlConnectionPool *pool_;
 };
