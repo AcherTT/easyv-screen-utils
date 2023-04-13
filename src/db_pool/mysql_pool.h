@@ -12,6 +12,7 @@ using namespace std;
 class MsqlConnectionPool
 {
 public:
+    // 单例模式
     static MsqlConnectionPool *getConnectPool(
         Napi::Env *env,
         const char *host,
@@ -20,13 +21,23 @@ public:
         const char *db,
         unsigned int port,
         int pool_size);
+    ~MsqlConnectionPool();
     MYSQL *getConnection();
-    // 防止外界通过拷贝构造函数和移动拷贝构造函数
+
+public:
+    // CRUD，因为从查询到获取结果步骤繁琐，所有封装了。
+    unique_ptr<MYSQL_RES> *find(MYSQL *conn, string &sql);
+    bool update(MYSQL *conn, string &sql);
+    u_int64_t insert(MYSQL *conn, string &sql);
+    bool del(MYSQL *conn, string &sql);
+
+public:
+    // 单例
     MsqlConnectionPool(const MsqlConnectionPool &obj) = delete;
     MsqlConnectionPool &operator=(const MsqlConnectionPool &obj) = delete;
-    ~MsqlConnectionPool();
 
 private:
+    // 构造函数私有化
     MsqlConnectionPool(
         Napi::Env *env,
         const char *host,
