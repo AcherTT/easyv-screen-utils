@@ -1,8 +1,8 @@
-#include "db_pool.h"
+#include "pgsql_pool.h"
 
 PgsqlConnectionPool::PgsqlConnectionPool(
     Napi::Env *env, const char *dbUrl, int pool_size)
-    : env_(env), dbUrl_(dbUrl), pool_size_(pool_size), current_size_(0)
+    : dbUrl_(dbUrl), pool_size_(static_cast<size_t>(pool_size)), current_size_(0), env_(env)
 {
     for (int i = 0; i < pool_size; ++i)
         createConnection();
@@ -58,7 +58,7 @@ void PgsqlConnectionPool::createConnection()
     if (PQstatus(conn) != CONNECTION_OK)
     {
         PQfinish(conn);
-        Napi::TypeError::New(*env_, "不能没有参数哇")
+        Napi::TypeError::New(*env_, "连接创建失败")
             .ThrowAsJavaScriptException();
         return;
     }

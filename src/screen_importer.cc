@@ -7,7 +7,6 @@
 #include <unistd.h>
 #include <iostream>
 #include <filesystem>
-// #include <fstream>
 #include <zip.h>
 
 ScreenImporterAsyncWorker::ScreenImporterAsyncWorker(

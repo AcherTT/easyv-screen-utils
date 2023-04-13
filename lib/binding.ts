@@ -7,8 +7,14 @@ interface ScreenImporterWrap {
 class ScreenImportUtils {
   private _addonInstance: ScreenImporterWrap
 
-  constructor(dbUrl: string) {
-    this._addonInstance = new addon.ScreenImportUtils(dbUrl)
+  constructor(
+    host: string,
+    user: string,
+    password: string,
+    database: string,
+    port: number,
+  ) {
+    this._addonInstance = new addon.ScreenImportUtils(...arguments)
   }
 
   importScreen(packetPath: string, callback: (err: Error, result: number) => void, time: number) {

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <napi.h>
-#include "db_pool.h"
+#include "db_pool/mysql_pool.h"
 
 /**
  * @brief ScreenImportUtils class
@@ -17,6 +17,5 @@ public:
   static Napi::Function GetClass(Napi::Env);
 
 private:
-  std::string dbUrl_;
-  PgsqlConnectionPool *pool_;
+  MsqlConnectionPool *pool_;
 };

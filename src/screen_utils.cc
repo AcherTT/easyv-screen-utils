@@ -1,6 +1,5 @@
 #include "screen_utils.h"
 #include "screen_importer.h"
-#include "db_pool.h"
 
 using namespace Napi;
 
@@ -9,20 +8,39 @@ ScreenImportUtils::ScreenImportUtils(const Napi::CallbackInfo &info)
 {
   Napi::Env env = info.Env();
 
-  if (info.Length() < 1)
+  if (info.Length() < 5)
   {
     Napi::TypeError::New(env, "不能没有参数哇").ThrowAsJavaScriptException();
     return;
   }
 
-  if (!info[0].IsString())
+  for (int i = 0; i < 4; ++i)
+  {
+    if (!info[i].IsString())
+    {
+      Napi::TypeError::New(env, "参数不对哇").ThrowAsJavaScriptException();
+      return;
+    }
+  }
+
+  if (!info[4].IsNumber())
   {
     Napi::TypeError::New(env, "参数不对哇").ThrowAsJavaScriptException();
     return;
   }
 
-  this->dbUrl_ = info[0].As<Napi::String>().Utf8Value();
-  this->pool_ = new PgsqlConnectionPool(&env, this->dbUrl_.c_str(), 4); // 创建连接池
+  auto host = info[0].As<Napi::String>().Utf8Value();
+  auto user = info[1].As<Napi::String>().Utf8Value();
+  auto passwd = info[2].As<Napi::String>().Utf8Value();
+  auto db = info[3].As<Napi::String>().Utf8Value();
+  auto port = info[4].As<Napi::Number>().Int32Value();
+  this->pool_ = MsqlConnectionPool::getConnectPool(&env,
+                                                   host.c_str(),
+                                                   user.c_str(),
+                                                   passwd.c_str(),
+                                                   db.c_str(),
+                                                   port,
+                                                   4);
 }
 
 ScreenImportUtils::~ScreenImportUtils()

@@ -9,7 +9,11 @@ let maxMemoryUsage = Number.MIN_SAFE_INTEGER;
 
 function testBasic() {
     const instance = new ScreenImportUtils(
-        "host=101.43.100.93 port=5432 dbname=postgres user=postgres password=admin123D"
+        '101.43.100.93',
+        'root',
+        'admin123D',
+        'easyv_saas',
+        3306
     );
     assert(instance.importScreen, "The expected method is not defined");
 

@@ -31,8 +31,8 @@ using namespace Napi;
 class ScreenImporterAsyncWorker : public AsyncWorker
 {
 private:
-  int runTime_;              // 超时时间, TODO: 未使用
   std::string packetPath_;   // 包地址-绝对路径
+  int runTime_;              // 超时时间, TODO: 未使用
   uint64_t newRootScreenId_; // 执行结果，大屏id
 
 private:                                                                           // 映射关系
