@@ -1,42 +1,50 @@
-# 实验性功能，暂未测试是否可用
+# 哎。没完明白，暂时用不了，貌似我本地node位置需要声明。
+cmake_minimum_required(VERSION 3.15)
+project(screen_utils_native)
 
-cmake_minimum_required(VERSION 3.10)
+# 设置 CMake 版本和策略
+cmake_policy(SET CMP0042 NEW)
+cmake_policy(SET CMP0091 NEW)
 
-project(easyv_screen_utils LANGUAGES CXX)
+add_definitions(-DNAPI_VERSION=4)
 
-set(CMAKE_CXX_STANDARD 11)
+# 设置 C++ 标准版本
+set(CMAKE_CXX_STANDARD 17)
 
-# Find Node.js
+# 设置 node 模块路径
+set(NodeJS_DIR /home/tantan/.config/nvm/versions/node/v18.15.0/bin)
+
+# 查找需要的库
 find_package(NodeJS REQUIRED)
+find_package(napi REQUIRED)
 
-# Include Node.js headers
-execute_process(
-    COMMAND node -p "require('node-addon-api').include"
-    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-    OUTPUT_VARIABLE NODE_ADDON_API_DIR
-    OUTPUT_STRIP_TRAILING_WHITESPACE
-)
-include_directories(${NODE_ADDON_API_DIR})
+# 添加头文件搜索路径
+include_directories(${CMAKE_JS_INC})
+# include_directories(${NodeJS_INCLUDE_DIRS})
+# include_directories(${napi_INCLUDE_DIRS})
 
-# Add source files
-set(SOURCES
-    src/screen_utils.cc
-    src/screen_importer.cc
-)
+# 添加源代码文件
+file(GLOB SOURCE_FILES "src/*.cc" "src/*.h" "src/db_pool/*.cc" "src/db_pool/*.h" "src/include/rapidjson/*.h")
 
-# Create shared library target
-add_library(easyv_screen_utils SHARED ${SOURCES})
+add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES} ${CMAKE_JS_SRC})
 
-# Set output filename to match the target name
-set_target_properties(easyv_screen_utils PROPERTIES PREFIX "" SUFFIX ".node")
+# 添加目标文件头文件搜索路径
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_JS_INC})
+# target_include_directories(${PROJECT_NAME} PRIVATE ${NodeJS_INCLUDE_DIRS})
+# target_include_directories(${PROJECT_NAME} PRIVATE ${napi_INCLUDE_DIRS})
 
-# Set include directories
-target_include_directories(easyv_screen_utils PRIVATE ${CMAKE_JS_INC})
+# 链接所需的库
+target_link_libraries(${PROJECT_NAME} ${CMAKE_JS_LIB})
+# target_link_libraries(${PROJECT_NAME} ${NodeJS_LIBRARIES})
+# target_link_libraries(${PROJECT_NAME} ${napi_LIBRARIES})
 
-target_link_libraries(
-    easyv_screen_utils
-    PRIVATE
-    ${CMAKE_JS_LIB}
-    ${NODEJS_LIBRARIES}
-    pq
-)
+# 定义所需的宏和变量
+add_definitions(-DNAPI_VERSION=${NAPI_VERSION})
+
+# 输出目标文件
+set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "" SUFFIX ".node")
+
+if(MSVC AND CMAKE_JS_NODELIB_DEF AND CMAKE_JS_NODELIB_TARGET)
+  # Generate node.lib
+  execute_process(COMMAND ${CMAKE_AR} /def:${CMAKE_JS_NODELIB_DEF} /out:${CMAKE_JS_NODELIB_TARGET} ${CMAKE_STATIC_LINKER_FLAGS})
+endif()
