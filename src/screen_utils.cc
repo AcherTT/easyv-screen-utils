@@ -43,10 +43,7 @@ ScreenImportUtils::ScreenImportUtils(const Napi::CallbackInfo &info)
                                                    4);
 }
 
-ScreenImportUtils::~ScreenImportUtils()
-{
-  delete this->pool_;
-}
+ScreenImportUtils::~ScreenImportUtils() {}
 
 Napi::Value ScreenImportUtils::ImportScreen(const Napi::CallbackInfo &info)
 {

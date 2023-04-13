@@ -16,10 +16,6 @@ PgsqlConnectionPool::~PgsqlConnectionPool()
         connections_.pop();
         PQfinish(conn);
     }
-
-    // 不需要释放这两个指针，因为它们是指向外部的指针
-    // delete env_;
-    // delete dbUrl_;
 }
 
 PGconn *PgsqlConnectionPool::getConnection()

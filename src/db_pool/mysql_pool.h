@@ -15,10 +15,10 @@ public:
     // 单例模式
     static MsqlConnectionPool *getConnectPool(
         Napi::Env *env,
-        const char *host,
-        const char *user,
-        const char *passwd,
-        const char *db,
+        const string host,
+        const string user,
+        const string passwd,
+        const string db,
         unsigned int port,
         int pool_size);
     ~MsqlConnectionPool();
@@ -40,10 +40,10 @@ private:
     // 构造函数私有化
     MsqlConnectionPool(
         Napi::Env *env,
-        const char *host,
-        const char *user,
-        const char *passwd,
-        const char *db,
+        const string host,
+        const string user,
+        const string passwd,
+        const string db,
         unsigned int port,
         int pool_size);
     void createConnection();             // 生产数据库连接
@@ -53,10 +53,10 @@ private:
     queue<MYSQL *> connections_;
     mutex mutex_;
     condition_variable cv_;
-    const char *host_;
-    const char *user_;
-    const char *passwd_;
-    const char *db_;
+    const string host_;
+    const string user_;
+    const string passwd_;
+    const string db_;
     unsigned int port_;
     queue<MYSQL *>::size_type pool_size_;
     queue<MYSQL *>::size_type current_size_;

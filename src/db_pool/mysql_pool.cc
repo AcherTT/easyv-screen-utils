@@ -2,10 +2,10 @@
 
 MsqlConnectionPool::MsqlConnectionPool(
     Napi::Env *env,
-    const char *host,
-    const char *user,
-    const char *passwd,
-    const char *db,
+    const string host,
+    const string user,
+    const string passwd,
+    const string db,
     unsigned int port,
     int pool_size) : host_(host), user_(user), passwd_(passwd), db_(db), port_(port),
                      pool_size_(static_cast<size_t>(pool_size)), current_size_(0), env_(env)
@@ -20,8 +20,11 @@ MsqlConnectionPool::MsqlConnectionPool(
 void MsqlConnectionPool::createConnection()
 {
     MYSQL *conn = mysql_init(nullptr);
-
-    if (!mysql_real_connect(conn, host_, user_, passwd_, db_, port_, nullptr, 0))
+    if (!mysql_real_connect(conn,
+                            host_.c_str(),
+                            user_.c_str(),
+                            passwd_.c_str(),
+                            db_.c_str(), port_, nullptr, 0))
     {
         mysql_close(conn);
         Napi::TypeError::New(*env_, "连接创建失败")
@@ -58,18 +61,14 @@ MsqlConnectionPool::~MsqlConnectionPool()
         connections_.pop();
         mysql_close(conn);
     }
-    delete host_;
-    delete user_;
-    delete passwd_;
-    delete db_;
 }
 
 MsqlConnectionPool *MsqlConnectionPool::getConnectPool(
     Napi::Env *env,
-    const char *host,
-    const char *user,
-    const char *passwd,
-    const char *db,
+    const string host,
+    const string user,
+    const string passwd,
+    const string db,
     unsigned int port,
     int pool_size)
 {
