@@ -13,11 +13,6 @@
         "<!@(node -p \"require('node-addon-api').include\")",
         "/usr/include",
       ],
-      'libraries': [
-        '-lpq',
-        '-lzip',
-        '-lmysqlclient',
-      ],
       'dependencies': [
         "<!(node -p \"require('node-addon-api').gyp\")",
       ],
@@ -25,30 +20,50 @@
       'cflags_cc!': [ '-fno-exceptions' ],
       'conditions': [
         ["OS == 'mac'", {
+          'include_dirs': [
+            '/opt/homebrew/opt/libpq/include',
+            "/opt/homebrew/opt/mysql-client/include",
+            "/opt/homebrew/Cellar/libzip/1.9.2/include",
+          ],
+          'libraries': [
+            '-L/opt/homebrew/opt/libpq/lib',
+            '-lpq',
+            '-L/opt/homebrew/Cellar/libzip/1.9.2/lib',
+            '-lzip',
+            '-L/opt/homebrew/opt/mysql-client/lib'
+            '-lmysqlclient',
+          ],
           "xcode_settings": {
             "OTHER_CFLAGS": [
               "-mmacosx-version-min=10.7"
             ],
             "OTHER_CPLUSPLUSFLAGS": [
               "-mmacosx-version-min=10.7"
+            ],
+            'GCC_ENABLE_CPP_EXCEPTIONS': 'YES',
+            'CLANG_CXX_LIBRARY': 'libc++',
+            'MACOSX_DEPLOYMENT_TARGET': '10.7',
+            "OTHER_CPLUSPLUSFLAGS": [
+              "-std=c++17",
+              "-stdlib=libc++"
             ]
           }
         }],
         ["OS == 'linux'", {
+          'include_dirs': [
+            "/usr/include/postgresql",
+            "/usr/include",
+          ],
+          'libraries': [
+            '-lpq',
+            '-lzip',
+            '-lmysqlclient',
+          ],
           "cflags_cc": [
             "-std=c++17"
-          ]
+          ],
         }]
       ],
-      'xcode_settings': {
-        'GCC_ENABLE_CPP_EXCEPTIONS': 'YES',
-        'CLANG_CXX_LIBRARY': 'libc++',
-        'MACOSX_DEPLOYMENT_TARGET': '10.7',
-        "OTHER_CPLUSPLUSFLAGS": [
-          "-std=c++17",
-          "-stdlib=libc++"
-        ]
-      },
       'msvs_settings': {
         'VCCLCompilerTool': { 'ExceptionHandling': 1 },
       }

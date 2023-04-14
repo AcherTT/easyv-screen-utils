@@ -3,7 +3,7 @@
 #include <queue>
 #include <mutex>
 #include <condition_variable>
-#include <postgresql/libpq-fe.h>
+#include <libpq-fe.h>
 #include <napi.h>
 
 class PgsqlConnectionPool
