@@ -18,17 +18,17 @@ function testBasic() {
     assert(instance.importScreen, "The expected method is not defined");
 
     const now = new Date().getTime()
-        console.log("now: ", __dirname)
-    // instance.importScreen(
-    //     // '/media/tantan/办公/work/code/easyv-screen-utils/screen_test/big_json/160.json',
-    //     '/media/tantan/办公/work/code/easyv-screen-utils/screen_test/big_screen.zip',
-    //     (err, result) => {
+    console.log("now: ", __dirname)
+    instance.importScreen(
+        // '/media/tantan/办公/work/code/easyv-screen-utils/screen_test/big_json/160.json',
+        '/media/tantan/办公/work/code/easyv-screen-utils/screen_test/big_screen.zip',
+        (err, result) => {
             clearInterval(id);
-    //         console.log("using time: ", new Date().getTime() - now)
-    //         console.log("result: ", err, result)
-    //         console.log("minMemoryUsage: ", minMemoryUsage);
-    //         console.log("maxMemoryUsage: ", maxMemoryUsage);
-    //     }, 11)
+            console.log("using time: ", new Date().getTime() - now)
+            console.log("result: ", err, result)
+            console.log("minMemoryUsage: ", minMemoryUsage);
+            console.log("maxMemoryUsage: ", maxMemoryUsage);
+        }, 11)
 }
 
 
