@@ -199,10 +199,81 @@ void ScreenImporterAsyncWorker::parsePacket() {
 void ScreenImporterAsyncWorker::importRootScreen() {
   // 将大屏包的信息导入到数据库
   auto screenData = this->screenData_->GetObject();
-  string query(
-      "INSERT INTO dt_easyv_info (`id`, `key`, `value`) values (1, \"test\", "
-      "\"test\");");
-  // this->pool_->insert(conn_, query);
-  string a("select * from dt_easyv_info;");
-  this->pool_->find(conn_, a);
+  // 拼接sql语句
+  string_view sql(R"(insert into dt_easyv_screen ( 
+        unique_tag, 
+        spaceId, teamId, group_id, 
+        screen_name,
+        global_filter,
+        left_bar_width, left_bar_width,
+        screen_config,
+        panels, components,
+        create_time, update_time,
+        share,layers, deleted_at, thumb, copy_count, share_info,
+        share_token, share_password, need_password, lines, assets, mobile_id,
+        panel_id, is_show_alert, is_show_loading
+      ) VALUES ()");
+
+  // 读取json数据是个大问题，因为字段可能是null，所以需要判断
+  string_view unique_tag = screenData["uniqueTag"].GetString();
+  auto spaceId = screenData["spaceId"].GetInt64();
+  auto teamId = screenData["teamId"].GetInt64();
+  auto group_id = screenData["groupId"].GetInt64();
+  string_view screen_name = screenData["screenName"].GetString();
+  string_view global_filter = screenData["globalFilter"].GetString();
+  auto left_bar_width = screenData["leftBarWidth"].GetInt64();
+  auto right_bar_width = screenData["rightBarWidth"].GetInt64();
+  string_view screen_config = screenData["screenConfig"].GetString();
+  string_view panels = screenData["panels"].GetString();
+  string_view components = screenData["components"].GetString();
+  string_view create_time = screenData["createTime"].GetString();
+  string_view update_time = screenData["updateTime"].GetString();
+  string_view share = screenData["share"].GetString();
+  string_view layers = screenData["layers"].GetString();
+  auto deleted_at = screenData["deletedAt"].GetInt64();
+  string_view thumb = screenData["thumb"].GetString();
+  auto copy_count = screenData["copyCount"].GetInt();
+  string_view share_info = screenData["shareInfo"].GetString();
+  string_view share_token = screenData["shareToken"].GetString();
+  string_view share_password = screenData["sharePassword"].GetString();
+  auto need_password = screenData["needPassword"].GetInt();
+  string_view lines = screenData["lines"].GetString();
+  string_view assets = screenData["assets"].GetString();
+  auto mobile_id = screenData["mobileId"].GetInt64();
+  auto panel_id = screenData["panelId"].GetInt64();
+  auto is_show_alert = screenData["isShowAlert"].GetInt();
+  auto is_show_loading = screenData["isShowLoading"].GetInt();
+
+  string query;
+  query.reserve(sql.size());
+  query += "'" + string(unique_tag) + "',";
+  query += to_string(spaceId) + ",";
+  query += to_string(teamId) + ",";
+  query += to_string(group_id) + ",";
+  query += "'" + string(screen_name) + "',";
+  query += "'" + string(global_filter) + "',";
+  query += to_string(left_bar_width) + ",";
+  query += to_string(right_bar_width) + ",";
+  query += "'" + string(screen_config) + "',";
+  query += "'" + string(panels) + "',";
+  query += "'" + string(components) + "',";
+  query += "'" + string(create_time) + "',";
+  query += "'" + string(update_time) + "',";
+  query += "'" + string(share) + "',";
+  query += "'" + string(layers) + "',";
+  query += to_string(deleted_at) + ",";
+  query += "'" + string(thumb) + "',";
+  query += to_string(copy_count) + ",";
+  query += "'" + string(share_info) + "',";
+  query += "'" + string(share_token) + "',";
+  query += "'" + string(share_password) + "',";
+  query += to_string(need_password) + ",";
+  query += "'" + string(lines) + "',";
+  query += "'" + string(assets) + "',";
+  query += to_string(mobile_id) + ",";
+  query += to_string(panel_id) + ",";
+  query += to_string(is_show_alert) + ",";
+  query += to_string(is_show_loading) + ");";
+  cout << query << endl;
+  this->pool_->insert(conn_, query);
 }
