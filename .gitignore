@@ -1,4 +1,4 @@
-build/
-node_modules/
-screen_test/
-dist/
+/build
+/node_modules
+/screen_test
+/dist
