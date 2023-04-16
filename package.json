@@ -2,7 +2,7 @@
     "main": "lib/binding.js",
     "scripts": {
         "pretest": "tsc",
-        "test": "node --napi-modules --expose-gc ./test/test_binding.js",
+        "test": "node --napi-modules --expose-gc ./tests/test_binding.debug.js",
         "memcheck": "npm run pretest && npm run build:debug && valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=guides/valgrind_memcheck.txt node --napi-modules --expose-gc ./test/test_binding.debug.js",
         "massif": "npm run pretest && npm run build:debug && valgrind --tool=massif --massif-out-file=guides/valgrind_massif.txt node --napi-modules --expose-gc ./test/test_binding.debug.js",
         "build:debug": "node-gyp rebuild --debug",

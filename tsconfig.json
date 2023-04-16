@@ -1,17 +1,39 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "lib": [ "esnext" , "ES2016"],
-    "module": "commonjs",
+    "lib": [
+      "esnext",
+      "ES2016"
+    ],
     "outDir": "./dist",
     "rootDir": "./lib",
     "strict": true,
-    "target": "es6",
-    "types": [
-      "node"
-    ],
-    "typeRoots": [
-      "node_modules/@types"
-    ]
-  }
+    "target": "ES2022",
+    "composite": true,
+    "module": "commonjs",
+    "declarationMap": true,
+    "noImplicitAny": false,
+    "importHelpers": true,
+    "removeComments": false,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": false,
+    "skipLibCheck": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "lib/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "tests",
+  ],
+  "types": [
+    "node"
+  ],
+  "typeRoots": [
+    "node_modules/@types"
+  ]
 }

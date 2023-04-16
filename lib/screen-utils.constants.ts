@@ -1,0 +1,1 @@
+export const SCREEN_UTILS_PROVIDER = Symbol('SCREEN_UTILS_PROVIDER');
