@@ -34,6 +34,7 @@ class MsqlConnectionPool {
   MYSQL *getConnection();
 
  public:
+  void releaseConnection(MYSQL *conn);  // 销毁数据库连接
   // CRUD，因为从查询到获取结果步骤繁琐，所有封装了。
   unique_ptr<vector<rapidjson::Document *>, VectorDeleter> find(MYSQL *conn,
                                                                 string &sql);
@@ -51,8 +52,7 @@ class MsqlConnectionPool {
   MsqlConnectionPool(Napi::Env *env, const string host, const string user,
                      const string passwd, const string db, unsigned int port,
                      int pool_size);
-  void createConnection();              // 生产数据库连接
-  void releaseConnection(MYSQL *conn);  // 销毁数据库连接
+  void createConnection();  // 生产数据库连接
 
  private:
   queue<MYSQL *> connections_;

@@ -1,0 +1,1044 @@
+desc: --massif-out-file=guides/valgrind_massif.out
+cmd: node --napi-modules --expose-gc ./test/test_binding.debug.js
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=221952803
+mem_heap_B=5618754
+mem_heap_extra_B=316262
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=540167276
+mem_heap_B=58603702
+mem_heap_extra_B=318466
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=769081060
+mem_heap_B=58603735
+mem_heap_extra_B=318489
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=1086033126
+mem_heap_B=111214536
+mem_heap_extra_B=321648
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=1517599592
+mem_heap_B=112791079
+mem_heap_extra_B=230985
+mem_stacks_B=0
+heap_tree=detailed
+n5: 112791079 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 105938722 0x10EABCD1: std::_MakeUniq<char []>::__array std::make_unique<char []>(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 105938722 0x10EA87E2: ScreenImporterAsyncWorker::unzipGetFiles[abi:cxx11]() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n1: 105938722 0x10EA8B83: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 105938722 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 105938722 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 105938722 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+       n1: 105938722 0x1666103: worker (threadpool.c:122)
+        n1: 105938722 0x521D608: start_thread (pthread_create.c:477)
+         n0: 105938722 0x5D87102: clone (clone.S:95)
+ n0: 2442629 in 796 places, all below massif's threshold (1.00%)
+ n1: 1573440 0x10EAA050: rapidjson::CrtAllocator::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 1573440 0x10EB8728: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::AddChunk(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n2: 1573440 0x10EB834F: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 1442320 0x10EB84DB: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::SetStringRaw(rapidjson::GenericStringRef<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 1442320 0x10EB7A8E: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::GenericValue(char const*, unsigned int, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 1442320 0x10EB6494: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::String(char const*, unsigned int, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+       n1: 1442320 0x10EB458A: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseString<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+        n1: 1442320 0x10EB1845: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+         n1: 1442320 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+          n1: 1442320 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+           n1: 1442320 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+            n1: 1442320 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+             n1: 1442320 0x10EB0B61: rapidjson::ParseResult rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+              n1: 1442320 0x10EAF732: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::ParseStream<0u, rapidjson::UTF8<char>, rapidjson::GenericStringStream<rapidjson::UTF8<char> > >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+               n1: 1442320 0x10EAE423: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::UTF8<char> >(rapidjson::UTF8<char>::Ch const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                n1: 1442320 0x10EAD292: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u>(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                 n1: 1442320 0x10EABA7A: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                  n1: 1442320 0x10EA7FDF: ScreenImporterAsyncWorker::getFileContent(char*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                   n1: 1442320 0x10EA8EE7: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                    n1: 1442320 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                     n1: 1442320 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                      n1: 1442320 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+                       n1: 1442320 0x1666103: worker (threadpool.c:122)
+                        n1: 1442320 0x521D608: start_thread (pthread_create.c:477)
+                         n0: 1442320 0x5D87102: clone (clone.S:95)
+    n0: 131120 in 1 place, below massif's threshold (1.00%)
+ n1: 1513392 0xAB884C: __static_initialization_and_destruction_0(int, int) [clone .constprop.82] (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+  n1: 1513392 0x2113D8C: __libc_csu_init (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+   n0: 1513392 0x5C8C03F: (below main) (libc-start.c:264)
+ n1: 1322896 0xB5A3FF: node::builtins::BuiltinLoader::RefreshCodeCache(std::vector<node::builtins::CodeCacheInfo, std::allocator<node::builtins::CodeCacheInfo> > const&) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+  n1: 1322896 0xB36483: node::LoadSnapshotDataAndRun(node::SnapshotData const**, node::InitializationResult const*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+   n1: 1322896 0xB3A02E: node::Start(int, char**) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+    n0: 1322896 0x5C8C0B2: (below main) (libc-start.c:308)
+#-----------
+snapshot=6
+#-----------
+time=1711143386
+mem_heap_B=113972887
+mem_heap_extra_B=231273
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=2034459946
+mem_heap_B=115942279
+mem_heap_extra_B=231753
+mem_stacks_B=0
+heap_tree=detailed
+n5: 115942279 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 105938722 0x10EABCD1: std::_MakeUniq<char []>::__array std::make_unique<char []>(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 105938722 0x10EA87E2: ScreenImporterAsyncWorker::unzipGetFiles[abi:cxx11]() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n1: 105938722 0x10EA8B83: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 105938722 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 105938722 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 105938722 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+       n1: 105938722 0x1666103: worker (threadpool.c:122)
+        n1: 105938722 0x521D608: start_thread (pthread_create.c:477)
+         n0: 105938722 0x5D87102: clone (clone.S:95)
+ n1: 4720320 0x10EAA050: rapidjson::CrtAllocator::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 4720320 0x10EB8728: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::AddChunk(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n2: 4720320 0x10EB834F: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 4589200 0x10EB84DB: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::SetStringRaw(rapidjson::GenericStringRef<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 4589200 0x10EB7A8E: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::GenericValue(char const*, unsigned int, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 4589200 0x10EB6494: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::String(char const*, unsigned int, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+       n1: 4589200 0x10EB458A: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseString<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+        n1: 4589200 0x10EB1845: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+         n1: 4589200 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+          n1: 4589200 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+           n1: 4589200 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+            n1: 4589200 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+             n1: 4589200 0x10EB0B61: rapidjson::ParseResult rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+              n1: 4589200 0x10EAF732: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::ParseStream<0u, rapidjson::UTF8<char>, rapidjson::GenericStringStream<rapidjson::UTF8<char> > >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+               n1: 4589200 0x10EAE423: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::UTF8<char> >(rapidjson::UTF8<char>::Ch const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                n1: 4589200 0x10EAD292: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u>(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                 n1: 4589200 0x10EABA7A: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                  n1: 4589200 0x10EA7FDF: ScreenImporterAsyncWorker::getFileContent(char*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                   n1: 4589200 0x10EA8EE7: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                    n1: 4589200 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                     n1: 4589200 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                      n1: 4589200 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+                       n1: 4589200 0x1666103: worker (threadpool.c:122)
+                        n1: 4589200 0x521D608: start_thread (pthread_create.c:477)
+                         n0: 4589200 0x5D87102: clone (clone.S:95)
+    n0: 131120 in 1 place, below massif's threshold (1.00%)
+ n0: 2446949 in 796 places, all below massif's threshold (1.00%)
+ n1: 1513392 0xAB884C: __static_initialization_and_destruction_0(int, int) [clone .constprop.82] (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+  n1: 1513392 0x2113D8C: __libc_csu_init (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+   n0: 1513392 0x5C8C03F: (below main) (libc-start.c:264)
+ n1: 1322896 0xB5A3FF: node::builtins::BuiltinLoader::RefreshCodeCache(std::vector<node::builtins::CodeCacheInfo, std::allocator<node::builtins::CodeCacheInfo> > const&) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+  n1: 1322896 0xB36483: node::LoadSnapshotDataAndRun(node::SnapshotData const**, node::InitializationResult const*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+   n1: 1322896 0xB3A02E: node::Start(int, char**) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+    n0: 1322896 0x5C8C0B2: (below main) (libc-start.c:308)
+#-----------
+snapshot=8
+#-----------
+time=2249964942
+mem_heap_B=117253479
+mem_heap_extra_B=232073
+mem_stacks_B=0
+heap_tree=detailed
+n5: 117253479 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 105938722 0x10EABCD1: std::_MakeUniq<char []>::__array std::make_unique<char []>(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 105938722 0x10EA87E2: ScreenImporterAsyncWorker::unzipGetFiles[abi:cxx11]() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n1: 105938722 0x10EA8B83: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 105938722 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 105938722 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 105938722 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+       n1: 105938722 0x1666103: worker (threadpool.c:122)
+        n1: 105938722 0x521D608: start_thread (pthread_create.c:477)
+         n0: 105938722 0x5D87102: clone (clone.S:95)
+ n1: 6031520 0x10EAA050: rapidjson::CrtAllocator::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 6031520 0x10EB8728: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::AddChunk(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n2: 6031520 0x10EB834F: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 5900400 0x10EB84DB: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::SetStringRaw(rapidjson::GenericStringRef<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 5900400 0x10EB7A8E: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::GenericValue(char const*, unsigned int, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 5900400 0x10EB6494: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::String(char const*, unsigned int, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+       n1: 5900400 0x10EB458A: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseString<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+        n1: 5900400 0x10EB1845: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+         n1: 5900400 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+          n1: 5900400 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+           n1: 5900400 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+            n1: 5900400 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+             n1: 5900400 0x10EB0B61: rapidjson::ParseResult rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+              n1: 5900400 0x10EAF732: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::ParseStream<0u, rapidjson::UTF8<char>, rapidjson::GenericStringStream<rapidjson::UTF8<char> > >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+               n1: 5900400 0x10EAE423: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::UTF8<char> >(rapidjson::UTF8<char>::Ch const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                n1: 5900400 0x10EAD292: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u>(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                 n1: 5900400 0x10EABA7A: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                  n1: 5900400 0x10EA7FDF: ScreenImporterAsyncWorker::getFileContent(char*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                   n1: 5900400 0x10EA8EE7: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                    n1: 5900400 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                     n1: 5900400 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                      n1: 5900400 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+                       n1: 5900400 0x1666103: worker (threadpool.c:122)
+                        n1: 5900400 0x521D608: start_thread (pthread_create.c:477)
+                         n0: 5900400 0x5D87102: clone (clone.S:95)
+    n0: 131120 in 1 place, below massif's threshold (1.00%)
+ n0: 2446949 in 796 places, all below massif's threshold (1.00%)
+ n1: 1513392 0xAB884C: __static_initialization_and_destruction_0(int, int) [clone .constprop.82] (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+  n1: 1513392 0x2113D8C: __libc_csu_init (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+   n0: 1513392 0x5C8C03F: (below main) (libc-start.c:264)
+ n1: 1322896 0xB5A3FF: node::builtins::BuiltinLoader::RefreshCodeCache(std::vector<node::builtins::CodeCacheInfo, std::allocator<node::builtins::CodeCacheInfo> > const&) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+  n1: 1322896 0xB36483: node::LoadSnapshotDataAndRun(node::SnapshotData const**, node::InitializationResult const*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+   n1: 1322896 0xB3A02E: node::Start(int, char**) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+    n0: 1322896 0x5C8C0B2: (below main) (libc-start.c:308)
+#-----------
+snapshot=9
+#-----------
+time=2541307683
+mem_heap_B=119027487
+mem_heap_extra_B=232505
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=2756812679
+mem_heap_B=120338687
+mem_heap_extra_B=232825
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=2994062907
+mem_heap_B=121781007
+mem_heap_extra_B=233177
+mem_stacks_B=0
+heap_tree=detailed
+n5: 121781007 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 105938722 0x10EABCD1: std::_MakeUniq<char []>::__array std::make_unique<char []>(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 105938722 0x10EA87E2: ScreenImporterAsyncWorker::unzipGetFiles[abi:cxx11]() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n1: 105938722 0x10EA8B83: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 105938722 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 105938722 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 105938722 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+       n1: 105938722 0x1666103: worker (threadpool.c:122)
+        n1: 105938722 0x521D608: start_thread (pthread_create.c:477)
+         n0: 105938722 0x5D87102: clone (clone.S:95)
+ n1: 10555160 0x10EAA050: rapidjson::CrtAllocator::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 10555160 0x10EB8728: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::AddChunk(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n2: 10555160 0x10EB834F: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 10424040 0x10EB84DB: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::SetStringRaw(rapidjson::GenericStringRef<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 10424040 0x10EB7A8E: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::GenericValue(char const*, unsigned int, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 10424040 0x10EB6494: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::String(char const*, unsigned int, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+       n1: 10424040 0x10EB458A: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseString<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+        n1: 10424040 0x10EB1845: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+         n1: 10424040 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+          n1: 10424040 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+           n1: 10424040 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+            n1: 10424040 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+             n1: 10424040 0x10EB0B61: rapidjson::ParseResult rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+              n1: 10424040 0x10EAF732: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::ParseStream<0u, rapidjson::UTF8<char>, rapidjson::GenericStringStream<rapidjson::UTF8<char> > >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+               n1: 10424040 0x10EAE423: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::UTF8<char> >(rapidjson::UTF8<char>::Ch const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                n1: 10424040 0x10EAD292: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u>(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                 n1: 10424040 0x10EABA7A: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                  n1: 10424040 0x10EA7FDF: ScreenImporterAsyncWorker::getFileContent(char*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                   n1: 10424040 0x10EA8EE7: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                    n1: 10424040 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                     n1: 10424040 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                      n1: 10424040 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+                       n1: 10424040 0x1666103: worker (threadpool.c:122)
+                        n1: 10424040 0x521D608: start_thread (pthread_create.c:477)
+                         n0: 10424040 0x5D87102: clone (clone.S:95)
+    n0: 131120 in 1 place, below massif's threshold (1.00%)
+ n0: 2450837 in 796 places, all below massif's threshold (1.00%)
+ n1: 1513392 0xAB884C: __static_initialization_and_destruction_0(int, int) [clone .constprop.82] (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+  n1: 1513392 0x2113D8C: __libc_csu_init (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+   n0: 1513392 0x5C8C03F: (below main) (libc-start.c:264)
+ n1: 1322896 0xB5A3FF: node::builtins::BuiltinLoader::RefreshCodeCache(std::vector<node::builtins::CodeCacheInfo, std::allocator<node::builtins::CodeCacheInfo> > const&) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+  n1: 1322896 0xB36483: node::LoadSnapshotDataAndRun(node::SnapshotData const**, node::InitializationResult const*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+   n1: 1322896 0xB3A02E: node::Start(int, char**) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+    n0: 1322896 0x5C8C0B2: (below main) (libc-start.c:308)
+#-----------
+snapshot=12
+#-----------
+time=3403400985
+mem_heap_B=124278119
+mem_heap_extra_B=233793
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=3834410977
+mem_heap_B=126900519
+mem_heap_extra_B=234433
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=4103792408
+mem_heap_B=128548267
+mem_heap_extra_B=234837
+mem_stacks_B=0
+heap_tree=detailed
+n5: 128548267 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 105938722 0x10EABCD1: std::_MakeUniq<char []>::__array std::make_unique<char []>(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 105938722 0x10EA87E2: ScreenImporterAsyncWorker::unzipGetFiles[abi:cxx11]() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n1: 105938722 0x10EA8B83: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 105938722 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 105938722 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 105938722 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+       n1: 105938722 0x1666103: worker (threadpool.c:122)
+        n1: 105938722 0x521D608: start_thread (pthread_create.c:477)
+         n0: 105938722 0x5D87102: clone (clone.S:95)
+ n1: 17307840 0x10EAA050: rapidjson::CrtAllocator::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 17307840 0x10EB8728: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::AddChunk(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n2: 17307840 0x10EB834F: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 17176720 0x10EB84DB: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::SetStringRaw(rapidjson::GenericStringRef<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 17176720 0x10EB7A8E: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::GenericValue(char const*, unsigned int, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 17176720 0x10EB6494: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::String(char const*, unsigned int, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+       n1: 17176720 0x10EB458A: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseString<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+        n1: 17176720 0x10EB1845: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+         n1: 17176720 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+          n1: 17176720 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+           n1: 17176720 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+            n1: 17176720 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+             n1: 17176720 0x10EB0B61: rapidjson::ParseResult rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+              n1: 17176720 0x10EAF732: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::ParseStream<0u, rapidjson::UTF8<char>, rapidjson::GenericStringStream<rapidjson::UTF8<char> > >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+               n1: 17176720 0x10EAE423: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::UTF8<char> >(rapidjson::UTF8<char>::Ch const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                n1: 17176720 0x10EAD292: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u>(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                 n1: 17176720 0x10EABA7A: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                  n1: 17176720 0x10EA7FDF: ScreenImporterAsyncWorker::getFileContent(char*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                   n1: 17176720 0x10EA8EE7: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                    n1: 17176720 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                     n1: 17176720 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                      n1: 17176720 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+                       n1: 17176720 0x1666103: worker (threadpool.c:122)
+                        n1: 17176720 0x521D608: start_thread (pthread_create.c:477)
+                         n0: 17176720 0x5D87102: clone (clone.S:95)
+    n0: 131120 in 1 place, below massif's threshold (1.00%)
+ n0: 2465417 in 796 places, all below massif's threshold (1.00%)
+ n1: 1513392 0xAB884C: __static_initialization_and_destruction_0(int, int) [clone .constprop.82] (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+  n1: 1513392 0x2113D8C: __libc_csu_init (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+   n0: 1513392 0x5C8C03F: (below main) (libc-start.c:264)
+ n1: 1322896 0xB5A3FF: node::builtins::BuiltinLoader::RefreshCodeCache(std::vector<node::builtins::CodeCacheInfo, std::allocator<node::builtins::CodeCacheInfo> > const&) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+  n1: 1322896 0xB36483: node::LoadSnapshotDataAndRun(node::SnapshotData const**, node::InitializationResult const*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+   n1: 1322896 0xB3A02E: node::Start(int, char**) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+    n0: 1322896 0x5C8C0B2: (below main) (libc-start.c:308)
+#-----------
+snapshot=15
+#-----------
+time=4394918885
+mem_heap_B=130318387
+mem_heap_extra_B=235269
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=4825928877
+mem_heap_B=132940787
+mem_heap_extra_B=235909
+mem_stacks_B=0
+heap_tree=detailed
+n4: 132940787 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 105938722 0x10EABCD1: std::_MakeUniq<char []>::__array std::make_unique<char []>(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 105938722 0x10EA87E2: ScreenImporterAsyncWorker::unzipGetFiles[abi:cxx11]() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n1: 105938722 0x10EA8B83: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 105938722 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 105938722 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 105938722 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+       n1: 105938722 0x1666103: worker (threadpool.c:122)
+        n1: 105938722 0x521D608: start_thread (pthread_create.c:477)
+         n0: 105938722 0x5D87102: clone (clone.S:95)
+ n1: 21700360 0x10EAA050: rapidjson::CrtAllocator::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 21700360 0x10EB8728: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::AddChunk(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n2: 21700360 0x10EB834F: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 21569240 0x10EB84DB: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::SetStringRaw(rapidjson::GenericStringRef<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 21569240 0x10EB7A8E: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::GenericValue(char const*, unsigned int, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 21569240 0x10EB6494: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::String(char const*, unsigned int, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+       n1: 21569240 0x10EB458A: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseString<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+        n1: 21569240 0x10EB1845: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+         n1: 21569240 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+          n1: 21569240 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+           n1: 21569240 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+            n1: 21569240 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+             n1: 21569240 0x10EB0B61: rapidjson::ParseResult rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+              n1: 21569240 0x10EAF732: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::ParseStream<0u, rapidjson::UTF8<char>, rapidjson::GenericStringStream<rapidjson::UTF8<char> > >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+               n1: 21569240 0x10EAE423: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::UTF8<char> >(rapidjson::UTF8<char>::Ch const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                n1: 21569240 0x10EAD292: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u>(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                 n1: 21569240 0x10EABA7A: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                  n1: 21569240 0x10EA7FDF: ScreenImporterAsyncWorker::getFileContent(char*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                   n1: 21569240 0x10EA8EE7: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                    n1: 21569240 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                     n1: 21569240 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                      n1: 21569240 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+                       n1: 21569240 0x1666103: worker (threadpool.c:122)
+                        n1: 21569240 0x521D608: start_thread (pthread_create.c:477)
+                         n0: 21569240 0x5D87102: clone (clone.S:95)
+    n0: 131120 in 1 place, below massif's threshold (1.00%)
+ n0: 3788313 in 797 places, all below massif's threshold (1.00%)
+ n1: 1513392 0xAB884C: __static_initialization_and_destruction_0(int, int) [clone .constprop.82] (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+  n1: 1513392 0x2113D8C: __libc_csu_init (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+   n0: 1513392 0x5C8C03F: (below main) (libc-start.c:264)
+#-----------
+snapshot=17
+#-----------
+time=5256938869
+mem_heap_B=135563187
+mem_heap_extra_B=236549
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=5558451317
+mem_heap_B=137411989
+mem_heap_extra_B=236995
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=5989461309
+mem_heap_B=140034389
+mem_heap_extra_B=237635
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=6270049823
+mem_heap_B=141738949
+mem_heap_extra_B=238051
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=6701059815
+mem_heap_B=144361349
+mem_heap_extra_B=238691
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=7132069807
+mem_heap_B=146983749
+mem_heap_extra_B=239331
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=7563079799
+mem_heap_B=149606149
+mem_heap_extra_B=239971
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=7994402095
+mem_heap_B=152248488
+mem_heap_extra_B=240608
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=8425412087
+mem_heap_B=154870888
+mem_heap_extra_B=241248
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=8856422079
+mem_heap_B=157493288
+mem_heap_extra_B=241888
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=9287432071
+mem_heap_B=160115688
+mem_heap_extra_B=242528
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=9459598781
+mem_heap_B=161164648
+mem_heap_extra_B=242784
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=9736371532
+mem_heap_B=162869208
+mem_heap_extra_B=243200
+mem_stacks_B=0
+heap_tree=detailed
+n3: 162869208 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 105938722 0x10EABCD1: std::_MakeUniq<char []>::__array std::make_unique<char []>(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 105938722 0x10EA87E2: ScreenImporterAsyncWorker::unzipGetFiles[abi:cxx11]() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n1: 105938722 0x10EA8B83: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 105938722 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 105938722 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 105938722 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+       n1: 105938722 0x1666103: worker (threadpool.c:122)
+        n1: 105938722 0x521D608: start_thread (pthread_create.c:477)
+         n0: 105938722 0x5D87102: clone (clone.S:95)
+ n1: 51595720 0x10EAA050: rapidjson::CrtAllocator::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 51595720 0x10EB8728: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::AddChunk(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n2: 51595720 0x10EB834F: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 51399040 0x10EB84DB: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::SetStringRaw(rapidjson::GenericStringRef<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 51399040 0x10EB7A8E: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::GenericValue(char const*, unsigned int, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 51399040 0x10EB6494: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::String(char const*, unsigned int, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+       n1: 51399040 0x10EB458A: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseString<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+        n1: 51399040 0x10EB1845: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+         n1: 51399040 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+          n1: 51399040 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+           n1: 51399040 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+            n1: 51399040 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+             n1: 51399040 0x10EB0B61: rapidjson::ParseResult rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+              n1: 51399040 0x10EAF732: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::ParseStream<0u, rapidjson::UTF8<char>, rapidjson::GenericStringStream<rapidjson::UTF8<char> > >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+               n1: 51399040 0x10EAE423: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::UTF8<char> >(rapidjson::UTF8<char>::Ch const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                n1: 51399040 0x10EAD292: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u>(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                 n1: 51399040 0x10EABA7A: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                  n1: 51399040 0x10EA7FDF: ScreenImporterAsyncWorker::getFileContent(char*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                   n1: 51399040 0x10EA8EE7: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                    n1: 51399040 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                     n1: 51399040 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                      n1: 51399040 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+                       n1: 51399040 0x1666103: worker (threadpool.c:122)
+                        n1: 51399040 0x521D608: start_thread (pthread_create.c:477)
+                         n0: 51399040 0x5D87102: clone (clone.S:95)
+    n0: 196680 in 2 places, all below massif's threshold (1.00%)
+ n0: 5334766 in 798 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=30
+#-----------
+time=10095858910
+mem_heap_B=165014235
+mem_heap_extra_B=243965
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=10388471569
+mem_heap_B=166819594
+mem_heap_extra_B=244366
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=10617299286
+mem_heap_B=168207594
+mem_heap_extra_B=244694
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=10948277520
+mem_heap_B=170175546
+mem_heap_extra_B=245174
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=11178237361
+mem_heap_B=171552306
+mem_heap_extra_B=245510
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=11397005058
+mem_heap_B=172929066
+mem_heap_extra_B=245846
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=11735151081
+mem_heap_B=174975546
+mem_heap_extra_B=246334
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=12181211051
+mem_heap_B=177669938
+mem_heap_extra_B=246990
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=12419876761
+mem_heap_B=179125738
+mem_heap_extra_B=247334
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=12756223178
+mem_heap_B=181158098
+mem_heap_extra_B=247830
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=13093093141
+mem_heap_B=183190458
+mem_heap_extra_B=248326
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=13434169472
+mem_heap_B=185290106
+mem_heap_extra_B=248838
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=13659507700
+mem_heap_B=186671642
+mem_heap_extra_B=249166
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=13887660341
+mem_heap_B=188113962
+mem_heap_extra_B=249518
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=14229983275
+mem_heap_B=190211882
+mem_heap_extra_B=250030
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=14460244471
+mem_heap_B=191590890
+mem_heap_extra_B=250358
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=14798780781
+mem_heap_B=193623250
+mem_heap_extra_B=250854
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=15132236826
+mem_heap_B=195590050
+mem_heap_extra_B=251334
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=15487389535
+mem_heap_B=197753530
+mem_heap_extra_B=251862
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=15935384613
+mem_heap_B=200441490
+mem_heap_extra_B=252518
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=16118278247
+mem_heap_B=201556234
+mem_heap_extra_B=252790
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=16298868765
+mem_heap_B=202670754
+mem_heap_extra_B=253062
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=16479189032
+mem_heap_B=203785274
+mem_heap_extra_B=253334
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=16658924088
+mem_heap_B=204834234
+mem_heap_extra_B=253590
+mem_stacks_B=0
+heap_tree=detailed
+n3: 204834234 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 105938722 0x10EABCD1: std::_MakeUniq<char []>::__array std::make_unique<char []>(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 105938722 0x10EA87E2: ScreenImporterAsyncWorker::unzipGetFiles[abi:cxx11]() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n1: 105938722 0x10EA8B83: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 105938722 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 105938722 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 105938722 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+       n1: 105938722 0x1666103: worker (threadpool.c:122)
+        n1: 105938722 0x521D608: start_thread (pthread_create.c:477)
+         n0: 105938722 0x5D87102: clone (clone.S:95)
+ n1: 93551912 0x10EAA050: rapidjson::CrtAllocator::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 93551912 0x10EB8728: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::AddChunk(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n3: 93551912 0x10EB834F: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 91322872 0x10EB84DB: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::SetStringRaw(rapidjson::GenericStringRef<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 91322872 0x10EB7A8E: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::GenericValue(char const*, unsigned int, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 91322872 0x10EB6494: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::String(char const*, unsigned int, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+       n1: 91322872 0x10EB458A: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseString<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+        n1: 91322872 0x10EB1845: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+         n1: 91322872 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+          n2: 91322872 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+           n1: 90667272 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+            n2: 90667272 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+             n1: 51530160 0x10EB0B61: rapidjson::ParseResult rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+              n1: 51530160 0x10EAF732: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::ParseStream<0u, rapidjson::UTF8<char>, rapidjson::GenericStringStream<rapidjson::UTF8<char> > >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+               n1: 51530160 0x10EAE423: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::UTF8<char> >(rapidjson::UTF8<char>::Ch const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                n1: 51530160 0x10EAD292: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u>(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                 n1: 51530160 0x10EABA7A: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                  n1: 51530160 0x10EA7FDF: ScreenImporterAsyncWorker::getFileContent(char*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                   n1: 51530160 0x10EA8EE7: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                    n1: 51530160 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                     n1: 51530160 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                      n1: 51530160 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+                       n1: 51530160 0x1666103: worker (threadpool.c:122)
+                        n1: 51530160 0x521D608: start_thread (pthread_create.c:477)
+                         n0: 51530160 0x5D87102: clone (clone.S:95)
+             n1: 39137112 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+              n1: 39137112 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+               n1: 39137112 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                n1: 39137112 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                 n1: 39137112 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                  n1: 39137112 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                   n1: 39137112 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                    n2: 39137112 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                     n1: 36973632 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                      n1: 36973632 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                       n1: 36973632 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                        n1: 36973632 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                         n1: 36973632 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                          n1: 36973632 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                           n1: 36973632 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                            n2: 36973632 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                             n1: 26336440 0x10EB0B61: rapidjson::ParseResult rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                              n0: 26336440 0x10EAF732: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::ParseStream<0u, rapidjson::UTF8<char>, rapidjson::GenericStringStream<rapidjson::UTF8<char> > >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                             n1: 10637192 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                              n0: 10637192 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                     n1: 2163480 0x10EB0B61: rapidjson::ParseResult rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                      n1: 2163480 0x10EAF732: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::ParseStream<0u, rapidjson::UTF8<char>, rapidjson::GenericStringStream<rapidjson::UTF8<char> > >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                       n1: 2163480 0x10EAE423: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::UTF8<char> >(rapidjson::UTF8<char>::Ch const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                        n1: 2163480 0x10EAD292: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u>(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                         n1: 2163480 0x10EABA7A: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                          n1: 2163480 0x10EA7FDF: ScreenImporterAsyncWorker::getFileContent(char*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                           n1: 2163480 0x10EA8EE7: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                            n1: 2163480 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                             n1: 2163480 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                              n0: 2163480 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+           n0: 655600 in 1 place, below massif's threshold (1.00%)
+    n1: 2163480 0x10EB77D5: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::SetObjectRaw(rapidjson::GenericMember<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >*, unsigned int, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 2163480 0x10EB62D5: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::EndObject(unsigned int) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 2163480 0x10EB4A99: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+       n2: 2163480 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+        n1: 2097920 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+         n1: 2097920 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+          n0: 2097920 in 2 places, all below massif's threshold (1.00%)
+        n0: 65560 in 2 places, all below massif's threshold (1.00%)
+    n0: 65560 in 1 place, below massif's threshold (1.00%)
+ n0: 5343600 in 798 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=54
+#-----------
+time=16831478181
+mem_heap_B=205883194
+mem_heap_extra_B=253846
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=17009919144
+mem_heap_B=206997714
+mem_heap_extra_B=254118
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=17131547139
+mem_heap_B=207718875
+mem_heap_extra_B=254317
+mem_stacks_B=0
+heap_tree=detailed
+n3: 207718875 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 105938722 0x10EABCD1: std::_MakeUniq<char []>::__array std::make_unique<char []>(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 105938722 0x10EA87E2: ScreenImporterAsyncWorker::unzipGetFiles[abi:cxx11]() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n1: 105938722 0x10EA8B83: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 105938722 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 105938722 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 105938722 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+       n1: 105938722 0x1666103: worker (threadpool.c:122)
+        n1: 105938722 0x521D608: start_thread (pthread_create.c:477)
+         n0: 105938722 0x5D87102: clone (clone.S:95)
+ n1: 96436552 0x10EAA050: rapidjson::CrtAllocator::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 96436552 0x10EB8728: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::AddChunk(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n3: 96436552 0x10EB834F: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 94141952 0x10EB84DB: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::SetStringRaw(rapidjson::GenericStringRef<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 94141952 0x10EB7A8E: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::GenericValue(char const*, unsigned int, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 94141952 0x10EB6494: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::String(char const*, unsigned int, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+       n1: 94141952 0x10EB458A: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseString<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+        n1: 94141952 0x10EB1845: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+         n1: 94141952 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+          n2: 94141952 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+           n1: 93420792 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+            n2: 93420792 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+             n1: 51530160 0x10EB0B61: rapidjson::ParseResult rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+              n1: 51530160 0x10EAF732: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::ParseStream<0u, rapidjson::UTF8<char>, rapidjson::GenericStringStream<rapidjson::UTF8<char> > >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+               n1: 51530160 0x10EAE423: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::UTF8<char> >(rapidjson::UTF8<char>::Ch const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                n1: 51530160 0x10EAD292: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u>(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                 n1: 51530160 0x10EABA7A: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                  n1: 51530160 0x10EA7FDF: ScreenImporterAsyncWorker::getFileContent(char*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                   n1: 51530160 0x10EA8EE7: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                    n1: 51530160 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                     n1: 51530160 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                      n1: 51530160 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+                       n1: 51530160 0x1666103: worker (threadpool.c:122)
+                        n1: 51530160 0x521D608: start_thread (pthread_create.c:477)
+                         n0: 51530160 0x5D87102: clone (clone.S:95)
+             n1: 41890632 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+              n1: 41890632 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+               n1: 41890632 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                n1: 41890632 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                 n1: 41890632 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                  n1: 41890632 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                   n1: 41890632 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                    n2: 41890632 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                     n1: 39727152 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                      n1: 39727152 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                       n1: 39727152 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                        n1: 39727152 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                         n1: 39727152 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                          n1: 39727152 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                           n1: 39727152 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                            n2: 39727152 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                             n1: 26336440 0x10EB0B61: rapidjson::ParseResult rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                              n0: 26336440 0x10EAF732: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::ParseStream<0u, rapidjson::UTF8<char>, rapidjson::GenericStringStream<rapidjson::UTF8<char> > >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                             n1: 13390712 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                              n0: 13390712 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                     n1: 2163480 0x10EB0B61: rapidjson::ParseResult rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                      n1: 2163480 0x10EAF732: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::ParseStream<0u, rapidjson::UTF8<char>, rapidjson::GenericStringStream<rapidjson::UTF8<char> > >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                       n1: 2163480 0x10EAE423: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::UTF8<char> >(rapidjson::UTF8<char>::Ch const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                        n1: 2163480 0x10EAD292: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u>(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                         n1: 2163480 0x10EABA7A: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                          n1: 2163480 0x10EA7FDF: ScreenImporterAsyncWorker::getFileContent(char*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                           n1: 2163480 0x10EA8EE7: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                            n1: 2163480 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                             n1: 2163480 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                              n0: 2163480 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+           n0: 721160 in 1 place, below massif's threshold (1.00%)
+    n1: 2229040 0x10EB77D5: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::SetObjectRaw(rapidjson::GenericMember<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >*, unsigned int, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 2229040 0x10EB62D5: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::EndObject(unsigned int) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 2229040 0x10EB4A99: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+       n2: 2229040 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+        n1: 2097920 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+         n1: 2097920 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+          n0: 2097920 in 2 places, all below massif's threshold (1.00%)
+        n0: 131120 in 2 places, all below massif's threshold (1.00%)
+    n0: 65560 in 1 place, below massif's threshold (1.00%)
+ n0: 5343601 in 798 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=57
+#-----------
+time=17316034010
+mem_heap_B=208833394
+mem_heap_extra_B=254566
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=17497895392
+mem_heap_B=210013474
+mem_heap_extra_B=254854
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=17670262631
+mem_heap_B=211062434
+mem_heap_extra_B=255110
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=17845939099
+mem_heap_B=212118474
+mem_heap_extra_B=255358
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=18023399741
+mem_heap_B=213191810
+mem_heap_extra_B=255606
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=18200995693
+mem_heap_B=214253530
+mem_heap_extra_B=255854
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=18239475469
+mem_heap_B=214450210
+mem_heap_extra_B=255902
+mem_stacks_B=0
+heap_tree=peak
+n3: 214450210 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 105938722 0x10EABCD1: std::_MakeUniq<char []>::__array std::make_unique<char []>(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 105938722 0x10EA87E2: ScreenImporterAsyncWorker::unzipGetFiles[abi:cxx11]() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n1: 105938722 0x10EA8B83: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 105938722 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 105938722 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 105938722 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+       n1: 105938722 0x1666103: worker (threadpool.c:122)
+        n1: 105938722 0x521D608: start_thread (pthread_create.c:477)
+         n0: 105938722 0x5D87102: clone (clone.S:95)
+ n1: 103167888 0x10EAA050: rapidjson::CrtAllocator::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+  n1: 103167888 0x10EB8728: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::AddChunk(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+   n3: 103167888 0x10EB834F: rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>::Malloc(unsigned long) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+    n1: 100611048 0x10EB84DB: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::SetStringRaw(rapidjson::GenericStringRef<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 100611048 0x10EB7A8E: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::GenericValue(char const*, unsigned int, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n2: 100611048 0x10EB6494: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::String(char const*, unsigned int, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+       n1: 100545488 0x10EB458A: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseString<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, bool) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+        n1: 100545488 0x10EB1845: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+         n1: 100545488 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+          n2: 100545488 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+           n1: 99693208 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+            n2: 99693208 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+             n1: 51530160 0x10EB0B61: rapidjson::ParseResult rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+              n1: 51530160 0x10EAF732: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::ParseStream<0u, rapidjson::UTF8<char>, rapidjson::GenericStringStream<rapidjson::UTF8<char> > >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+               n1: 51530160 0x10EAE423: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::UTF8<char> >(rapidjson::UTF8<char>::Ch const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                n1: 51530160 0x10EAD292: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u>(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                 n1: 51530160 0x10EABA7A: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                  n1: 51530160 0x10EA7FDF: ScreenImporterAsyncWorker::getFileContent(char*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                   n1: 51530160 0x10EA8EE7: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                    n1: 51530160 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                     n1: 51530160 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                      n1: 51530160 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+                       n1: 51530160 0x1666103: worker (threadpool.c:122)
+                        n1: 51530160 0x521D608: start_thread (pthread_create.c:477)
+                         n0: 51530160 0x5D87102: clone (clone.S:95)
+             n1: 48163048 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+              n1: 48163048 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+               n1: 48163048 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                n1: 48163048 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                 n1: 48163048 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                  n1: 48163048 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                   n1: 48163048 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                    n2: 48163048 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                     n1: 43798952 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                      n1: 43798952 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                       n1: 43798952 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                        n1: 43798952 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                         n1: 43798952 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                          n1: 43798952 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                           n1: 43798952 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                            n2: 43798952 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                             n1: 27392480 0x10EB0B61: rapidjson::ParseResult rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                              n0: 27392480 0x10EAF732: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::ParseStream<0u, rapidjson::UTF8<char>, rapidjson::GenericStringStream<rapidjson::UTF8<char> > >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                             n1: 16406472 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                              n0: 16406472 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                     n1: 4364096 0x10EB0B61: rapidjson::ParseResult rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                      n1: 4364096 0x10EAF732: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::ParseStream<0u, rapidjson::UTF8<char>, rapidjson::GenericStringStream<rapidjson::UTF8<char> > >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                       n1: 4364096 0x10EAE423: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u, rapidjson::UTF8<char> >(rapidjson::UTF8<char>::Ch const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                        n1: 4364096 0x10EAD292: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse<0u>(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                         n1: 4364096 0x10EABA7A: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::Parse(char const*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                          n1: 4364096 0x10EA7FDF: ScreenImporterAsyncWorker::getFileContent(char*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                           n1: 4364096 0x10EA8EE7: ScreenImporterAsyncWorker::parsePacket() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                            n1: 4364096 0x10EA7913: ScreenImporterAsyncWorker::Execute() (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                             n1: 4364096 0x10EA9D7B: Napi::AsyncWorker::OnExecute(napi_env__*, void*) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+                              n0: 4364096 0xB41E09: node::ThreadPoolWork::ScheduleWork()::{lambda(uv_work_s*)#1}::_FUN(uv_work_s*) (in /home/tantan/.config/nvm/versions/node/v18.15.0/bin/node)
+           n0: 852280 in 1 place, below massif's threshold (1.00%)
+       n0: 65560 in 1 place, below massif's threshold (1.00%)
+    n1: 2491280 0x10EB77D5: rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >::SetObjectRaw(rapidjson::GenericMember<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator> >*, unsigned int, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+     n1: 2491280 0x10EB62D5: rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>::EndObject(unsigned int) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+      n1: 2491280 0x10EB4A99: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+       n2: 2491280 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+        n1: 2360160 0x10EB4D87: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseArray<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+         n2: 2360160 0x10EB1877: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+          n1: 2163480 0x10EB49CC: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseObject<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+           n1: 2163480 0x10EB185E: void rapidjson::GenericReader<rapidjson::UTF8<char>, rapidjson::UTF8<char>, rapidjson::CrtAllocator>::ParseValue<0u, rapidjson::GenericStringStream<rapidjson::UTF8<char> >, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> >(rapidjson::GenericStringStream<rapidjson::UTF8<char> >&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&) (in /media/tantan/办公/work/code/easyv-screen-utils/build/Debug/screen_utils_native.node)
+            n0: 2163480 in 2 places, all below massif's threshold (1.00%)
+          n0: 196680 in 1 place, below massif's threshold (1.00%)
+        n0: 131120 in 2 places, all below massif's threshold (1.00%)
+    n0: 65560 in 1 place, below massif's threshold (1.00%)
+ n0: 5343600 in 798 places, all below massif's threshold (1.00%)

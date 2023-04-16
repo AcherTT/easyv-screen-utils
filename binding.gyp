@@ -16,7 +16,8 @@
       'dependencies': [
         "<!(node -p \"require('node-addon-api').gyp\")",
       ],
-      'cflags!': [ '-fno-exceptions' ],
+      'cflags!': [ '-fno-exceptions', '-g'],
+      "ldflags": ["-g"],
       'cflags_cc!': [ '-fno-exceptions' ],
       'conditions': [
         ["OS == 'mac'", {

@@ -1,4 +1,4 @@
-const ScreenImportUtils = require("../dist/binding.js");
+const ScreenImportUtils = require("../dist/binding.debug.js");
 const assert = require("assert");
 
 assert(ScreenImportUtils, "The expected module is undefined");

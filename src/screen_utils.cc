@@ -31,7 +31,7 @@ ScreenImportUtils::ScreenImportUtils(const Napi::CallbackInfo &info)
   auto db = info[3].As<Napi::String>().Utf8Value();
   auto port = info[4].As<Napi::Number>().Int32Value();
   this->pool_ = MsqlConnectionPool::getConnectPool(
-      &env, host.c_str(), user.c_str(), passwd.c_str(), db.c_str(), port, 4);
+      &env, host.c_str(), user.c_str(), passwd.c_str(), db.c_str(), port, 5);
 }
 
 ScreenImportUtils::~ScreenImportUtils() {}

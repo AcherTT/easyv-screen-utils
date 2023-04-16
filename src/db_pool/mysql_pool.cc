@@ -1,4 +1,5 @@
 #include "mysql_pool.h"
+
 #include <iostream>
 
 using namespace std;
@@ -7,13 +8,35 @@ MsqlConnectionPool::MsqlConnectionPool(Napi::Env *env, const string host,
                                        const string user, const string passwd,
                                        const string db, unsigned int port,
                                        int pool_size)
-    : host_(host), user_(user), passwd_(passwd), db_(db), port_(port),
-      pool_size_(static_cast<size_t>(pool_size)), current_size_(0), env_(env)
+    : host_(host),
+      user_(user),
+      passwd_(passwd),
+      db_(db),
+      port_(port),
+      pool_size_(static_cast<size_t>(pool_size)),
+      current_size_(0),
+      env_(env)
 
 {
-  for (size_t i = 0; i < pool_size_; ++i) {
-    createConnection();
+  for (size_t i = 0; i < pool_size_; ++i) createConnection();
+}
+
+MsqlConnectionPool::~MsqlConnectionPool() {
+  cout << "~MsqlConnectionPool" << endl;
+  while (!connections_.empty()) {
+    MYSQL *conn = connections_.front();
+    connections_.pop();
+    mysql_close(conn);
+    delete conn;
   }
+}
+
+MsqlConnectionPool *MsqlConnectionPool::getConnectPool(
+    Napi::Env *env, const string host, const string user, const string passwd,
+    const string db, unsigned int port, int pool_size) {
+  static MsqlConnectionPool instance(env, host, user, passwd, db, port,
+                                     pool_size);
+  return &instance;
 }
 
 void MsqlConnectionPool::createConnection() {
@@ -43,28 +66,11 @@ void MsqlConnectionPool::releaseConnection(MYSQL *conn) {
   cv_.notify_one();
 }
 
-MsqlConnectionPool::~MsqlConnectionPool() {
-  while (!connections_.empty()) {
-    MYSQL *conn = connections_.front();
-    connections_.pop();
-    mysql_close(conn);
-  }
-}
-
-MsqlConnectionPool *MsqlConnectionPool::getConnectPool(
-    Napi::Env *env, const string host, const string user, const string passwd,
-    const string db, unsigned int port, int pool_size) {
-  static MsqlConnectionPool instance(env, host, user, passwd, db, port,
-                                     pool_size);
-  return &instance;
-}
-
 // 获取线程池中的连接
 MYSQL *MsqlConnectionPool::getConnection() {
   unique_lock<mutex> lock(mutex_);
 
-  while (connections_.empty())
-    cv_.wait(lock);
+  while (connections_.empty()) cv_.wait(lock);
 
   MYSQL *conn = connections_.front();
   connections_.pop();
@@ -89,7 +95,7 @@ MsqlConnectionPool::find(MYSQL *conn, string &sql) {
   MYSQL_ROW row;
   while ((row = mysql_fetch_row(queryResult))) {
     auto result = new Document();
-    result->SetObject(); // 确保 Document 是一个对象类型
+    result->SetObject();  // 确保 Document 是一个对象类型
     for (int i = 0; i < num_fields; i++) {
       result->AddMember(
           Value(fields[i].name, strlen(fields[i].name), result->GetAllocator()),
@@ -118,7 +124,6 @@ u_int64_t MsqlConnectionPool::insert(MYSQL *conn, string &sql) {
 }
 
 bool MsqlConnectionPool::del(MYSQL *conn, string &sql) {
-  if (mysql_query(conn, sql.c_str()))
-    throw runtime_error("删除失败");
+  if (mysql_query(conn, sql.c_str())) throw runtime_error("删除失败");
   return true;
 }
